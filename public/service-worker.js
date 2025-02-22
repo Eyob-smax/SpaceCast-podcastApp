@@ -1,5 +1,11 @@
 const cacheName = "podcast-v1";
-const filesToCache = ["/"];
+const filesToCache = [
+  "/",
+  "manifest.json",
+  "index.html",
+  "style.css",
+  "script.js",
+];
 
 self.addEventListener("install", (event) => {
   console.log("Service Worker: Installed");
