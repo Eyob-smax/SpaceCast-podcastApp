@@ -1,12 +1,12 @@
 const cacheName = "podcast-v1";
 const filesToCache = [
-  "/manifest.json",
+  "/public/manifest.json",
   "/index.html",
-  "/style.css",
-  "/script.js",
-  "/Podcast_01_generated.jpg",
-  "/Podcast-icon-192.png",
-  "/Podcast-icon-512.png",
+  "/public/style.css",
+  "/public/script.js",
+  "/public/Podcast_01_generated.jpg",
+  "/public/Podcast-icon-192.png",
+  "/public/Podcast-icon-512.png",
 ];
 
 self.addEventListener("install", (event) => {
