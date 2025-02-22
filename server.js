@@ -9,7 +9,7 @@ dotenv.config();
 app.use(express.json());
 app.use(cors({ origin: "*" }));
 
-app.use(express.static("./public"));
+app.use(express.static("public"));
 
 const PORT = process.env.PORT || 5000;
 const AUTH_KEY = process.env.AUTH_KEY;
