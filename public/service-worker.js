@@ -1,6 +1,5 @@
 const cacheName = "podcast-v1";
 const filesToCache = [
-  "/",
   "/manifest.json",
   "/index.html",
   "/style.css",
