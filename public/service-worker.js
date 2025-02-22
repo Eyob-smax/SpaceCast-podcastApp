@@ -1,13 +1,5 @@
 const cacheName = "podcast-v1";
-const filesToCache = [
-  "manifest.json",
-  "index.html",
-  "style.css",
-  "script.js",
-  "Podcast_01_generated.jpg",
-  "Podcast-icon-192.png",
-  "Podcast-icon-512.png",
-];
+const filesToCache = ["/"];
 
 self.addEventListener("install", (event) => {
   console.log("Service Worker: Installed");
