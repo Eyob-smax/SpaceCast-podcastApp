@@ -1,0 +1,26 @@
+{
+  "name": "Podcast Player",
+  "short_name": "PodPlayer",
+  "description": "A Progressive Web App for streaming and managing podcasts.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "./Podcast-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./podcast-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "scope": "/",
+  "categories": ["entertainment", "audio", "music"],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "lang": "en-US"
+}
