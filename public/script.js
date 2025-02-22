@@ -307,7 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
       geteElement("body").style.pointerEvents = "none";
 
       const response = await fetch(
-        `http://localhost:5000/api/search?q=${encodeURIComponent(key)}`
+        `http://localhost:10000/api/search?q=${encodeURIComponent(key)}`
       );
       const data = await response.json();
       if (!data.feeds) {
@@ -464,7 +464,7 @@ document.addEventListener("DOMContentLoaded", () => {
       geteElement(".loader-container").style.display = "block flex";
 
       const response = await fetch(
-        `http://localhost:5000/api/episodes?feedId=${encodeURIComponent(
+        `http://localhost:10000/api/episodes?feedId=${encodeURIComponent(
           feedId
         )}&max=${max}`
       );
