@@ -3,12 +3,13 @@ import dotenv from "dotenv";
 import CryptoJS from "crypto-js";
 import fetch from "node-fetch";
 import cors from "cors";
-import path from "path";
 
 const app = express();
 dotenv.config();
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "*" }));
+
+app.use(express.static("../frontend"));
 
 const PORT = process.env.PORT || 5000;
 const AUTH_KEY = process.env.AUTH_KEY;
