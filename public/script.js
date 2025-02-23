@@ -839,6 +839,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function saveQueueToLS(episode) {
+    if (queueArray.includes(episode)) return;
+    queueArray.push(episode);
     const filtered = queueArray.filter((queue) => {
       return queue !== undefined;
     });
