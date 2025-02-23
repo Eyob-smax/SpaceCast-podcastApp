@@ -547,6 +547,10 @@ document.addEventListener("DOMContentLoaded", () => {
     addBtn.addEventListener("click", () => {
       addBtn.classList.add("added-to-queue");
       sendToQueue(episode);
+      queueContainer.scrollTo({
+        bottom: 0,
+        behavior: "smooth",
+      });
     });
 
     const episodesDescription = createEl(
