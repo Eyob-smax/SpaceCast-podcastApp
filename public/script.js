@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const mainContainer = document.querySelector(".main-container");
   const queueContainer = document.querySelector(".queue");
   const playerContainer = document.querySelector(".player-container");
-  let each;
+  const domain = "https://spacecast.onrender.com";
 
   function geteElement(selector, parent = document) {
     return parent.querySelector(selector);
@@ -293,9 +293,7 @@ document.addEventListener("DOMContentLoaded", () => {
       geteElement("body").style.pointerEvents = "none";
 
       const response = await fetch(
-        `https://podplayer-1.onrender.com/api/search?q=${encodeURIComponent(
-          key
-        )}`
+        `${domain}/api/search?q=${encodeURIComponent(key)}`
       );
       const data = await response.json();
       if (!data.feeds) {
@@ -452,9 +450,7 @@ document.addEventListener("DOMContentLoaded", () => {
       geteElement(".loader-container").style.display = "block flex";
 
       const response = await fetch(
-        `https://podplayer-1.onrender.com/api/episodes?feedId=${encodeURIComponent(
-          feedId
-        )}&max=${max}`
+        `${domain}/api/episodes?feedId=${encodeURIComponent(feedId)}&max=${max}`
       );
       const data = await response.json();
       if (!data.items) {
