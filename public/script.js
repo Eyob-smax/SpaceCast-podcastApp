@@ -849,6 +849,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cards = JSON.parse(localStorage.getItem("queue"));
     if (cards) {
       cards.forEach((episode) => {
+        queueArray.push(episode);
         sendToQueue(episode);
       });
     }
