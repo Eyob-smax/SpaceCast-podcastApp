@@ -774,7 +774,7 @@ h3 {
 }
 
 .added-to-queue {
-  animation: bellRing 1 0.16s ease-in-out;
+  animation: bellRing 1 0.08s ease-in-out;
 }
 
 @keyframes bellRing {
@@ -782,10 +782,10 @@ h3 {
     transform: rotate(0deg);
   }
   50% {
-    transform: rotate(20deg);
+    transform: rotate(15deg);
   }
   85% {
-    transform: rotate(-20deg);
+    transform: rotate(-15deg);
   }
   100% {
     transform: rotate(0deg);
