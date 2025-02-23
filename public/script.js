@@ -820,9 +820,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function sendToQueue(episode) {
-    console.log("episode", episode);
     if (queueArray.includes(episode)) return;
-    episodeArray.push(episode);
     const card = createQueueCard(episode);
     geteElement(".queue").appendChild(card);
     saveQueueToLS(episode);
@@ -850,6 +848,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function saveQueueToLS(episode) {
+    queueArray.push(episode);
     const filtered = queueArray.filter((queue) => {
       return queue !== undefined && queue !== null;
     });
