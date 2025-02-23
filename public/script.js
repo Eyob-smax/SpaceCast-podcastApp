@@ -77,13 +77,13 @@ document.addEventListener("DOMContentLoaded", () => {
     })}`;
   }
 
+  const arry = JSON.parse(localStorage.getItem("searchHistory"));
+  if (arry) {
+    const random = Math.floor(Math.random() * arry.length);
+    searchPodcast(arry[random]);
+  }
+  renderHistory();
   setInterval(() => {
-    const arry = JSON.parse(localStorage.getItem("searchHistory"));
-    if (arry) {
-      const random = Math.floor(Math.random() * arry.length);
-      searchPodcast(arry[random]);
-    }
-    renderHistory();
     if (window.innerWidth < 1025) {
       if (localStorage.getItem("page") === "search") {
         navigationToSearch();
