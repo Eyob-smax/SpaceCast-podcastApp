@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Podcast Player App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    />
+    <script src="script.js" defer></script>
+    <link rel="manifest" href="./manifest.json" />
+  </head>
+  <body class="dark-mode">
+    <div class="nav-wrapper">
+      <nav class="nav">
+        <h1 class="nav-title">Podcast Player</h1>
+        <i class="fas fa-microphone-alt"></i>
+
+        <!-- Mobile navigation -->
+        <div class="nav-list">
+          <span class="selected" id="searchLink">Search</span>
+          <span id="listenLink">Listen</span>
+        </div>
+      </nav>
+    </div>
+
+    <div class="page-wrapper">
+      <div class="search-container">
+        <!--? Seach Histroty -->
+        <div class="custom-select">
+          <select name="searchHistory" id="searchHistory">
+            <option value="">Select a previous search</option>
+          </select>
+        </div>
+        <input type="text" id="searchInput" placeholder="Search for podcasts" />
+        <div class="search-buttons">
+          <button type="button" id="searchButton">Search</button>
+          <button type="button" id="resetButton">Clear History</button>
+        </div>
+      </div>
+
+      <div class="main-container">
+        <div class="loader-container">
+          <i class="fas fa-microphone-alt"></i>
+        </div>
+
+        <div id="cardsContainer" class="cards-container">
+          <div hidden class="card">
+            <div class="card-img-container">
+              <img src="Podcast_01_generated.jpg" />
+            </div>
+            <div class="card-content">
+              <h3 class="podcast-title">Podcast Title</h3>
+              <p class="card-description">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non,
+                dolor temporibus neque quis itaque numquam pariatur odit facere,
+                mollitia omnis voluptas hic accusantium distinctio quas ipsa
+                consectetur ratione nemo ipsum vel aperiam beatae. Cumque at ut
+                quibusdam dignissimos reiciendis corrupti enim maiores, tempore
+                perspiciatis molestiae aut cum similique velit quidem.
+              </p>
+              <p class="episode-count">Episode: 50</p>
+              <p class="pub-date">Newest Episode: 2024-09-01</p>
+            </div>
+          </div>
+          <div hidden class="card">
+            <div class="card-img-container">
+              <img src="Podcast_01_generated.jpg" />
+            </div>
+            <div class="card-content">
+              <h3 class="podcast-title">Podcast Title</h3>
+              <p class="card-description">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non,
+                dolor temporibus neque quis itaque numquam pariatur odit facere,
+                mollitia omnis voluptas hic accusantium distinctio quas ipsa
+                consectetur ratione nemo ipsum vel aperiam beatae. Cumque at ut
+                quibusdam dignissimos reiciendis corrupti enim maiores, tempore
+                perspiciatis molestiae aut cum similique velit quidem.
+              </p>
+              <p class="episode-count">Episode: 50</p>
+              <p class="pub-date">Newest Episode: 2024-09-01</p>
+            </div>
+          </div>
+          <div hidden class="card">
+            <div class="card-img-container">
+              <img src="Podcast_01_generated.jpg" />
+            </div>
+            <div class="card-content">
+              <h3 class="podcast-title">Podcast Title</h3>
+              <p class="card-description">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non,
+                dolor temporibus neque quis itaque numquam pariatur odit facere,
+                mollitia omnis voluptas hic accusantium distinctio quas ipsa
+                consectetur ratione nemo ipsum vel aperiam beatae. Cumque at ut
+                quibusdam dignissimos reiciendis corrupti enim maiores, tempore
+                perspiciatis molestiae aut cum similique velit quidem.
+              </p>
+              <p class="episode-count">Episode: 50</p>
+              <p class="pub-date">Newest Episode: 2024-09-01</p>
+            </div>
+          </div>
+          <div hidden class="card">
+            <div class="card-img-container">
+              <img src="Podcast_01_generated.jpg" />
+            </div>
+            <div class="card-content">
+              <h3 class="podcast-title">Podcast Title</h3>
+              <p class="card-description">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non,
+                dolor temporibus neque quis itaque numquam pariatur odit facere,
+                mollitia omnis voluptas hic accusantium distinctio quas ipsa
+                consectetur ratione nemo ipsum vel aperiam beatae. Cumque at ut
+                quibusdam dignissimos reiciendis corrupti enim maiores, tempore
+                perspiciatis molestiae aut cum similique velit quidem.
+              </p>
+              <p class="episode-count">Episode: 50</p>
+              <p class="pub-date">Newest Episode: 2024-09-01</p>
+            </div>
+          </div>
+          <div hidden class="card">
+            <div class="card-img-container">
+              <img src="Podcast_01_generated.jpg" />
+            </div>
+            <div class="card-content">
+              <h3 class="podcast-title">Podcast Title</h3>
+              <p class="card-description">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non,
+                dolor temporibus neque quis itaque numquam pariatur odit facere,
+                mollitia omnis voluptas hic accusantium distinctio quas ipsa
+                consectetur ratione nemo ipsum vel aperiam beatae. Cumque at ut
+                quibusdam dignissimos reiciendis corrupti enim maiores, tempore
+                perspiciatis molestiae aut cum similique velit quidem.
+              </p>
+              <p class="episode-count">Episode: 50</p>
+              <p class="pub-date">Newest Episode: 2024-09-01</p>
+            </div>
+          </div>
+          <div hidden class="card">
+            <div class="card-img-container">
+              <img src="Podcast_01_generated.jpg" />
+            </div>
+            <div class="card-content">
+              <h3 class="podcast-title">Podcast Title</h3>
+              <p class="card-description">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non,
+                dolor temporibus neque quis itaque numquam pariatur odit facere,
+                mollitia omnis voluptas hic accusantium distinctio quas ipsa
+                consectetur ratione nemo ipsum vel aperiam beatae. Cumque at ut
+                quibusdam dignissimos reiciendis corrupti enim maiores, tempore
+                perspiciatis molestiae aut cum similique velit quidem.
+              </p>
+              <p class="episode-count">Episode: 50</p>
+              <p class="pub-date">Newest Episode: 2024-09-01</p>
+            </div>
+          </div>
+
+          <div hidden class="pagination">
+            <i id="prev-btn" class="fas fa-chevron-left"></i>
+            <span id="currentPage">1</span>
+            <i id="next-btn" class="fas fa-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="player-container">
+        <div class="player">
+          <div class="img-container">
+            <img
+              id="player-img"
+              src="./Podcast_01_generated.jpg"
+              alt="Album Art"
+            />
+          </div>
+
+          <div class="title-container">
+            <h2 id="player-title">Podcast Title</h2>
+            <h3 id="player-datePublished">Date Published</h3>
+          </div>
+
+          <audio id="player" src=""></audio>
+          <div class="controls-container">
+            <!--? Progress -->
+            <div class="progress-container" id="progress-container">
+              <div class="animation-wrapper">
+                <div class="progress" id="progress"></div>
+              </div>
+              <div class="duration-wrapper">
+                <span id="current-time">0:00</span>
+                <span id="duration">0:00</span>
+              </div>
+            </div>
+            <!--? Controls -->
+            <div class="controller">
+              <div class="player-controls">
+                <i class="fas fa-backward" id="prev" title="-15 Seconds"></i>
+                <i class="fas fa-play main-button" id="play" title="Play"></i>
+                <i class="fas fa-forward" id="next" title="+15 Seconds"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="queue"></div>
+      </div>
+    </div>
+  </body>
+</html>
