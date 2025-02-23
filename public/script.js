@@ -520,8 +520,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const iconContainer = createEl("div", "episode-icon-container", null, null);
     const playIcon = createEl("i", "play-btn fas fa-play-circle");
     playIcon.addEventListener("click", () => {
-      if (playIcon.className === "play-btn fas fa-spinner fa-spin") {
+      if (playIcon.className === "play-btn fas fa-pause-circle") {
         pausePodcast();
+        console.log("what???");
         playIcon.className = "play-btn fas fa-play-circle";
         return;
       }
@@ -821,22 +822,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function deleteItemsFromQueue(episode) {
     const usure = confirm("Are you sure you want to remove this podcast?");
-    if (!usure) return;
-    queueArray = queueArray.filter(
-      (item) => item.title !== episode.title && item.image !== episode.image
-    );
+    if (usure) {
+      queueArray = queueArray.filter(
+        (item) => item.title !== episode.title && item.image !== episode.image
+      );
 
-    localStorage.setItem("queue", JSON.stringify(queueArray));
+      localStorage.setItem("queue", JSON.stringify(queueArray));
 
-    const items = document.querySelectorAll(".queue-item");
+      const items = document.querySelectorAll(".queue-item");
 
-    items.forEach((card) => {
-      const title = card.querySelector("h3").textContent;
-      const image = card.querySelector("img").src;
-      if (title === episode.title && image === episode.image) {
-        card.remove();
-      }
-    });
+      items.forEach((card) => {
+        const title = card.querySelector("h3").textContent;
+        const image = card.querySelector("img").src;
+        if (title === episode.title && image === episode.image) {
+          card.remove();
+        }
+      });
+    }
   }
 
   function saveQueueToLS(episode) {

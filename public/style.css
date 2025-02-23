@@ -512,7 +512,7 @@ h3 {
   padding: 5px 15px;
   cursor: pointer;
   font-size: 1rem;
-  margin: 5px 0;
+  margin: 0;
 }
 
 .pagination span {
@@ -774,7 +774,7 @@ h3 {
 }
 
 .added-to-queue {
-  animation: bellRing 1 0.5s ease-in-out;
+  animation: bellRing 3 0.05s ease-in-out;
 }
 
 @keyframes bellRing {
@@ -783,6 +783,9 @@ h3 {
   }
   50% {
     transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
   }
   100% {
     transform: rotate(0deg);
