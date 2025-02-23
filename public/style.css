@@ -723,9 +723,9 @@ h3 {
     max-height: 200px;
   }
 
-  /*! .player-controls {
-     margin-left: 31px; 
-  } */
+  .player-controls {
+    padding-left: 26px;
+  }
 
   .card img {
     width: 100%;
