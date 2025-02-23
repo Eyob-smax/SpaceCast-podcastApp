@@ -774,7 +774,7 @@ h3 {
 }
 
 .added-to-queue {
-  animation: bellRing 3 0.05s ease-in-out;
+  animation: bellRing 1 0.05s ease-in-out;
 }
 
 @keyframes bellRing {
