@@ -782,10 +782,10 @@ h3 {
     transform: rotate(0deg);
   }
   50% {
-    transform: rotate(15deg);
+    transform: rotate(20deg);
   }
   85% {
-    transform: rotate(-15deg);
+    transform: rotate(-20deg);
   }
   100% {
     transform: rotate(0deg);
