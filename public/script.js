@@ -77,19 +77,21 @@ document.addEventListener("DOMContentLoaded", () => {
     })}`;
   }
 
-  const arry = JSON.parse(localStorage.getItem("searchHistory"));
-  if (arry) {
-    const random = Math.floor(Math.random() * arry.length);
-    searchPodcast(arry[random]);
-  }
-  renderHistory();
-  if (window.innerWidth < 1025) {
-    if (localStorage.getItem("page") === "search") {
-      navigationToSearch();
-    } else {
-      navigationToPlayer();
+  setInterval(() => {
+    const arry = JSON.parse(localStorage.getItem("searchHistory"));
+    if (arry) {
+      const random = Math.floor(Math.random() * arry.length);
+      searchPodcast(arry[random]);
     }
-  }
+    renderHistory();
+    if (window.innerWidth < 1025) {
+      if (localStorage.getItem("page") === "search") {
+        navigationToSearch();
+      } else {
+        navigationToPlayer();
+      }
+    }
+  }, 3000);
 
   //?EVENNT LISTENERS
 
@@ -534,7 +536,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const iconContainer = createEl("div", "episode-icon-container", null, null);
     const playIcon = createEl("i", "play-btn fas fa-play-circle");
     playIcon.addEventListener("click", () => {
+      playIcon.className = "fas fa-spinner fa-spin";
       loadPodcast(episode);
+      playIcon.className = "fas fa-pause-circle";
     });
 
     const addBtn = createEl("i", "add-btn fas fa-list");
