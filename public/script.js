@@ -813,6 +813,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function sendToQueue(episode) {
+    episodeArray.push(episode);
+    if (queueArray.includes(episode)) return;
     const card = createQueueCard(episode);
     geteElement(".queue").appendChild(card);
     saveQueueToLS(episode);
