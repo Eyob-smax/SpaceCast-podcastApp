@@ -520,13 +520,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const iconContainer = createEl("div", "episode-icon-container", null, null);
     const playIcon = createEl("i", "play-btn fas fa-play-circle");
     playIcon.addEventListener("click", () => {
-      playIcon.className = "fas fa-spinner fa-spin";
+      if (playIcon.className === "play-btn fas fa-spinner fa-spin") {
+        pausePodcast();
+        playIcon.className = "play-btn fas fa-play-circle";
+        return;
+      }
+      playIcon.className = "play-btn fas fa-spinner fa-spin";
       loadPodcast(episode);
-      playIcon.className = "fas fa-pause-circle";
+      playIcon.className = "play-btn fas fa-pause-circle";
     });
 
     const addBtn = createEl("i", "add-btn fas fa-list");
     addBtn.addEventListener("click", () => {
+      addBtn.classList.add("added-to-queue");
       sendToQueue(episode);
     });
 
@@ -641,7 +647,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function loadPodcast(episode) {
     console.log("episode", episode.title);
     let titleArray = episode.title.split(" ");
+
     if (titleArray.length > 7) {
+      for (let i = 0; i < titleArray.length; i++) {
+        titleArray[i] = "...";
+        titleArray.splice(i, 1);
+      }
       titleArray = titleArray.slice(0, 7);
       titleArray.push("...");
       title.textContent = titleArray.join(" ");
@@ -809,6 +820,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function deleteItemsFromQueue(episode) {
+    const usure = confirm("Are you sure you want to remove this podcast?");
+    if (!usure) return;
     queueArray = queueArray.filter(
       (item) => item.title !== episode.title && item.image !== episode.image
     );
