@@ -32,6 +32,10 @@ function generateAuthHeaders() {
   };
 }
 
+app.get("/port", (req, res) => {
+  res.json({ PORT });
+});
+
 app.get("/api/search", async (req, res) => {
   const query = req.query.q;
   if (!query) {

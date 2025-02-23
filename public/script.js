@@ -1,4 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
+  let PORT;
+
+  function getPort() {
+    fetch("https://spacecast.onrender.com/port")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("data", data);
+        PORT = data.PORT || 10000;
+      })
+      .catch((error) => {
+        console.log("Cannot get port", error.message);
+      });
+  }
+
+  getPort();
+
   const searchLink = document.getElementById("searchLink");
   const listenLink = document.getElementById("listenLink");
   const searchContainer = document.querySelector(".search-container");
@@ -642,7 +658,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function loadPodcast(episode) {
-    console.log("episode", episode.title);
     let titleArray = episode.title.split(" ");
 
     if (titleArray.length > 7) {
@@ -676,9 +691,6 @@ document.addEventListener("DOMContentLoaded", () => {
       playPodcast();
     });
   }
-
-  // Current Podcast
-  let songIndex = 0;
 
   function formatTime(time, elName) {
     //calculate minutes seconds
@@ -808,8 +820,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function sendToQueue(episode) {
-    episodeArray.push(episode);
+    console.log("episode", episode);
     if (queueArray.includes(episode)) return;
+    episodeArray.push(episode);
     const card = createQueueCard(episode);
     geteElement(".queue").appendChild(card);
     saveQueueToLS(episode);
@@ -838,8 +851,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function saveQueueToLS(episode) {
     const filtered = queueArray.filter((queue) => {
-      return queue !== undefined;
+      return queue !== undefined && queue !== null;
     });
+    console.log("filtered", filtered);
     localStorage.setItem("queue", JSON.stringify(filtered));
   }
 
