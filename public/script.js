@@ -77,22 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })}`;
   }
 
-  const arry = JSON.parse(localStorage.getItem("searchHistory"));
-  if (arry) {
-    const random = Math.floor(Math.random() * arry.length);
-    searchPodcast(arry[random]);
-  }
-  renderHistory();
-  setInterval(() => {
-    if (window.innerWidth < 1025) {
-      if (localStorage.getItem("page") === "search") {
-        navigationToSearch();
-      } else {
-        navigationToPlayer();
-      }
-    }
-  }, 3000);
-
   //?EVENNT LISTENERS
 
   searchInput.addEventListener("focus", (e) => {
@@ -861,6 +845,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   renderQueueFromLS();
+  renderHistory();
+
+  const arry = JSON.parse(localStorage.getItem("searchHistory"));
+  if (arry) {
+    const random = Math.floor(Math.random() * arry.length);
+    searchPodcast(arry[random]);
+  }
+  if (window.innerWidth < 1025) {
+    if (localStorage.getItem("page") === "search") {
+      navigationToSearch();
+    } else {
+      navigationToPlayer();
+    }
+  }
 
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
