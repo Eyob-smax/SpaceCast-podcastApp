@@ -755,10 +755,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, 2000);
 
-<<<<<<< HEAD
-=======
-  //!Load player state
->>>>>>> 4d94893d342a75d5afd1aadea81227f7c5b90c76
   function loadState() {
     const state = JSON.parse(localStorage.getItem("state"));
     if (!state) return;
