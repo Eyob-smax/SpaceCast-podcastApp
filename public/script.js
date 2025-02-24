@@ -777,6 +777,11 @@ document.addEventListener("DOMContentLoaded", () => {
     queueImg.src = episode.image;
     const queueContent = createEl("div", "queue-content");
     episode.title = episode.title.split(" ").slice(0, 7);
+    episode.title.forEach((word, index) => {
+      if (word === "...") {
+        episode.title.splice(index, 1);
+      }
+    });
     episode.title.push("...");
     episode.title = episode.title.join(" ");
     const queueTitle = createEl("h3", "queue-title", episode.title);
@@ -865,13 +870,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const random = Math.floor(Math.random() * arry.length);
     searchPodcast(arry[random]);
   }
-  if (window.innerWidth < 1025) {
-    if (localStorage.getItem("page") === "search") {
-      navigationToSearch();
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth < 1025) {
+      if (localStorage.getItem("page") === "search") {
+        navigationToSearch();
+      } else {
+        navigationToPlayer();
+      }
     } else {
-      navigationToPlayer();
+      location.reload();
     }
-  }
+  });
 
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
