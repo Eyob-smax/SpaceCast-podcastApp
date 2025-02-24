@@ -663,12 +663,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function loadPodcast(episode) {
     let titleArray = episode.title.split(" ");
-
     if (titleArray.length > 7) {
       titleArray = titleArray.slice(0, 7);
-      if (titleArray.includes("...")) {
-        title.replaceAll("...", "");
-      }
       titleArray.push("...");
       title.textContent = titleArray.join(" ");
     } else {
