@@ -534,7 +534,6 @@ document.addEventListener("DOMContentLoaded", () => {
     playIcon.addEventListener("click", () => {
       if (playIcon.className === "play-btn fas fa-pause-circle") {
         pausePodcast();
-        console.log("what???");
         playIcon.className = "play-btn fas fa-play-circle";
         return;
       }
@@ -692,12 +691,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function formatTime(time, elName) {
-    //calculate minutes seconds
     const hours = Math.floor(time / 3600);
     const minutes = Math.floor((time % 3600) / 60);
     let seconds = Math.floor(time % 60);
-
-    //format seconds
 
     if (seconds < 10) {
       seconds = `0${seconds}`;
@@ -715,11 +711,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Update Progress Bar & Time
   function updateProgressBar(e) {
     const { duration, currentTime } = e.srcElement;
-    // Update progress bar width
     const progressPercent = (currentTime / duration) * 100;
     progress.style.width = `${progressPercent}%`;
-
-    //?Format time
     formatTime(duration, durationEl);
     formatTime(currentTime, currentTimeEl);
   }
