@@ -666,7 +666,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (titleArray.length > 7) {
       titleArray = titleArray.slice(0, 7);
-      title.replaceAll("...", "");
+      if (titleArray.includes("...")) {
+        title.replaceAll("...", "");
+      }
       titleArray.push("...");
       title.textContent = titleArray.join(" ");
     } else {
