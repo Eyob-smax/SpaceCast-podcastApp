@@ -665,11 +665,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let titleArray = episode.title.split(" ");
 
     if (titleArray.length > 7) {
-      for (let i = 0; i < titleArray.length; i++) {
-        titleArray[i] = "...";
-        titleArray.splice(i, 1);
-      }
       titleArray = titleArray.slice(0, 7);
+      title.replaceAll("...", "");
       titleArray.push("...");
       title.textContent = titleArray.join(" ");
     } else {
