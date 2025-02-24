@@ -789,6 +789,7 @@ document.addEventListener("DOMContentLoaded", () => {
     queueImg.src = episode.image;
     const queueContent = createEl("div", "queue-content");
     episode.title = episode.title.split(" ").slice(0, 7);
+    episode.title = episode.title.replaceAll("...", "");
     episode.title.push("...");
     episode.title = episode.title.join(" ");
     const queueTitle = createEl("h3", "queue-title", episode.title);
