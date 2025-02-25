@@ -1,6 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   let PORT;
-  handleScreenResize();
+
+  if (window.innerWidth < 1025) {
+    if (localStorage.getItem("page") === "search") {
+      navigationToSearch();
+    } else {
+      navigationToPlayer();
+    }
+  }
 
   function getPort() {
     fetch("https://spacecast.onrender.com/port")
