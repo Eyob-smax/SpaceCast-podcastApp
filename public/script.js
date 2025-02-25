@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   let PORT;
+  handleScreenResize();
 
   function getPort() {
     fetch("https://spacecast.onrender.com/port")
@@ -871,7 +872,7 @@ document.addEventListener("DOMContentLoaded", () => {
     searchPodcast(arry[random]);
   }
 
-  window.addEventListener("resize", () => {
+  function handleScreenResize() {
     if (window.innerWidth < 1025) {
       if (localStorage.getItem("page") === "search") {
         navigationToSearch();
@@ -881,7 +882,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       location.reload();
     }
-  });
+  }
+
+  window.addEventListener("resize", handleScreenResize);
 
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
