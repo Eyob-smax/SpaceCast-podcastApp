@@ -1,28 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let PORT;
-
-  if (window.innerWidth < 1025) {
-    if (localStorage.getItem("page") === "search") {
-      navigationToSearch();
-    } else {
-      navigationToPlayer();
-    }
-  }
-
-  function getPort() {
-    fetch("https://spacecast.onrender.com/port")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("data", data);
-        PORT = data.PORT || 10000;
-      })
-      .catch((error) => {
-        console.log("Cannot get port", error.message);
-      });
-  }
-
-  getPort();
-
   const searchLink = document.getElementById("searchLink");
   const listenLink = document.getElementById("listenLink");
   const searchContainer = document.querySelector(".search-container");
@@ -31,6 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const playerContainer = document.querySelector(".player-container");
   const domain = "https://spacecast.onrender.com";
 
+  if (window.innerWidth < 1025) {
+    if (localStorage.getItem("page") === "search") {
+      navigationToSearch();
+    } else {
+      navigationToPlayer();
+    }
+  }
   function geteElement(selector, parent = document) {
     return parent.querySelector(selector);
   }
