@@ -28,7 +28,7 @@ This is an evolving project, and **more improvements and features will be added 
 - **Responsive Design**: Ensures compatibility across all devices.
 - **Podcast Index API**: Fetches podcast data from a massive library.
 
-## 🎧 How It Works
+## 🎧 How It Works 
 
 1. **🔎 Search & Discover**: Use the search bar to find podcasts from a vast library of **4,000,000+ podcasts**.
 2. **▶️ Play Podcasts**: Stream or download episodes to listen offline.
