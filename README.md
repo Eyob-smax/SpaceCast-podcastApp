@@ -45,7 +45,7 @@ This is an evolving project, and **more improvements and features will be added 
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/Eyob-smax/SpaceCast.git
+   git clone https://github.com/Eyob-smax/SpaceCast-podcastApp.git
    ```
 2. **Open the project folder:**
    ```sh
